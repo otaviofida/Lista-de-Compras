@@ -7,10 +7,12 @@ const removeIcon= document.querySelector(".productItem .hgi-delete-02")
 
 form.addEventListener("submit", (event) => {
     event.preventDefault()
-
+    
     if(inputProduct.value != ""){
+
         const newList = document.createElement("li")
         newList.classList.add("productItem")
+        newList.setAttribute("id", idLi);
 
         const newCheck = document.createElement("input")
         newCheck.setAttribute("type", "checkbox")
@@ -49,6 +51,11 @@ function removeItem(element) {
     // Se o item existir, remove ele
     if (item) {
         item.remove();
+        alert.classList.add("show-alert")
+        setTimeout(() => {
+            inputProduct.classList.remove("inputAlert")
+            alert.classList.remove("show-alert")
+        }, 2000);
         return true; // Retorna true indicando que foi removido
     }
 
