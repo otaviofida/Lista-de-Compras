@@ -1,0 +1,255 @@
+:root{
+--background-primary: #F4F5FB;
+--background-secondary: #FFFFFF;
+
+--color-brand: #CA3884;
+--color-brand-hover: #A52C6B;
+--color-danger: #C93847;
+
+--content-primary: #080B12;
+--content-secondary: #374151;
+--content-tertiary: #9CA3AF;
+--white: #fff;
+
+--border-primary: #D1D5DB;
+--border-hover: #B9C2D0;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    list-style: none;
+    -webkit-font-smoothing: antialiased;
+    font-family: unset;
+}
+
+body{
+    background: var(--background-primary);
+    font-family: "Inter", sans-serif;
+    height: 100vh;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 0;
+    gap: 5rem;
+}
+
+.title{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: bold;
+}
+
+.label{
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+}
+
+.paragraph{
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+}
+
+.link{
+    font-size: .875rem;
+    line-height: 1rem;
+    font-weight: 500;
+}
+
+.button{
+    border-radius: 12px;
+    background: var(--color-brand);
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    color: var(--white);
+    border: 0;
+    transition: background-color .6s;
+    height: 44px;
+    min-width: 10rem;
+}
+
+.button:hover{
+background: var(--color-brand-hover);
+}
+
+.inputField {
+    border-radius: 12px;
+    border: 2px solid var(--border-primary);
+    background: var(--background-secondary);
+    padding: 0px 18px;
+    height: 2.75rem;
+    color: var(--content-primary);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 140%;
+    transition: .5s;
+    width: 100%;
+}
+
+.inputAlert{
+    border: 2px solid var(--color-danger);
+}
+
+.inputField:hover{
+    border: 2px solid var(--border-hover);
+}
+
+.inputField:focus{
+    border: 2px solid var(--color-brand);
+}
+
+input[type="checkbox"] {
+    border: 1px solid var(--border-primary);
+    appearance: unset;
+    width: 16px;
+    height: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+input[type="checkbox"]:hover {
+    border: 1px solid var(--border-hover);
+}
+
+input[type="checkbox"]:checked{
+    background-color: var(--color-brand);
+    position: relative;
+    border: 1px solid var(--color-brand);
+}
+
+input[type="checkbox"]:checked::after {
+    content: "✔";
+    font-size: 10px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Style elementos */
+
+
+section {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    max-width: 680px;
+    width: 100%;
+    gap: 1.5rem;
+}
+
+.breadcrumb{
+    color: var(--color-brand);
+}
+
+section h1{
+    color: var(--content-primary);
+}
+
+.headInput{
+    width: 100%;
+}
+
+.headInput form{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 24px;
+}
+
+.listProducts{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+}
+
+.productItem{
+    display: inline-flex;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: center;
+    border-radius: 12px;
+    background: var(--background-secondary);
+    gap: .75rem;
+    padding: 1rem .75rem;color: var(--content-secondary);
+}
+
+.productItem .paragraph{
+    width: 100%;
+}
+
+.productItem i{
+    cursor: pointer;
+}
+
+.alert{
+    background: var(--color-danger);
+    display: inline-flex;
+    visibility: hidden;
+    opacity: 0;
+    width: 100%;
+    border-radius: .75rem;
+    padding: .75rem;
+    gap: .5rem;
+    align-items: center;
+    color: var(--white);
+    transition: opacity 2s;
+}
+
+.alert .label{
+    width: 100%;
+}
+
+.alert i{
+    cursor: pointer;
+}
+
+.show-alert{
+    visibility: visible;
+    transition: opacity 2s;
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    body{
+        height: 100%;
+        gap: 3rem;
+        padding: 0;
+    }
+
+    header img{
+        display: none;
+    }
+
+    .container {
+        max-width: 380px;
+        padding: 0 20px;
+    }
+
+    form{
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .listProducts{
+        margin-top: 1.5rem;
+    }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras</title>
+
+    <!-- Tipografia -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Icones -->
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+</head>
+<body>
+    <header>
+        <img src="assets/logo.png" alt="Logo Quicklist">
+    </header>
+
+    <section>
+        <div class="container">
+            <span class="link breadcrumb"><- Voltar</span>
+            <h1 class="title">Compras da semana</h1>
+
+            <div class="headInput">
+                <form>
+                    <input class="inputField" type="text" name="product" id="product" placeholder="Adicione um novo item">
+                    <button type="submit" class="button">Adicionar item</button>
+                </form>
+            </div>
+
+            <ul class="listProducts">
+                <li class="productItem item1">
+                    <input type="checkbox">
+                    <span class="paragraph">Pão de Forma</span>
+                    <i onclick="removeItem(this)" class="hgi hgi-stroke hgi-delete-02"></i>
+                </li>
+
+                <li class="productItem">
+                    <input type="checkbox">
+                    <span class="paragraph">Café Preto</span>
+                    <i onclick="removeItem(this)" class="hgi hgi-stroke hgi-delete-02"></i>
+                </li>
+
+                <li class="productItem">
+                    <input type="checkbox">
+                    <span class="paragraph">Suco de laranja</span>
+                    <i onclick="removeItem(this)" class="hgi hgi-stroke hgi-delete-02"></i>
+                </li>
+
+                <li class="productItem">
+                    <input type="checkbox">
+                    <span class="paragraph">Bolacha</span>
+                    <i onclick="removeItem(this)" class="hgi hgi-stroke hgi-delete-02"></i>
+                </li>
+            </ul>
+
+            <footer class="alert">
+                <i class="ph-fill ph-warning-circle"></i>
+                <span class="label">O item foi removido da lista</span>
+                <i class="ph-bold ph-x"></i>
+            </footer>
+            
+        </div>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
